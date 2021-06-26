@@ -2,9 +2,9 @@ import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
 
-MAX_DIAG_MULTIPLYER = 5 # 5
-MAX_ANGLE_DIFF = 12.0 # 12.0
-MAX_AREA_DIFF = 0.5 # 0.5
+MAX_DIAG_MULTIPLYER = 5 
+MAX_ANGLE_DIFF = 12.0 
+MAX_AREA_DIFF = 0.5 
 MAX_WIDTH_DIFF = 0.8
 MAX_HEIGHT_DIFF = 0.2
 MIN_N_MATCHED = 3 # 3
@@ -125,7 +125,6 @@ def process_segmentation_char(img, model):
         x, y, w, h = cv.boundingRect(contour)
         cv.rectangle(temp_result, pt1=(x, y), pt2=(x+w, y+h), color=(255, 255, 255), thickness=2)
     
-        # insert to dict
         contours_dict.append({
             'contour': contour,
             'x': x,
@@ -136,11 +135,9 @@ def process_segmentation_char(img, model):
             'cy': y + (h / 2)
         })
 
-    # visualize possible contours
     temp_result = np.zeros((height, width, channel), dtype=np.uint8)
 
     for d in possible_contours:
-        # cv2.drawContours(temp_result, d['contour'], -1, (255, 255, 255))
         cv.rectangle(temp_result, pt1=(d['x'], d['y']), pt2=(d['x']+d['w'], d['y']+d['h']), color=(255, 255, 255), thickness=2)
     
     result_idx = find_chars(possible_contours)
@@ -162,15 +159,7 @@ def process_segmentation_char(img, model):
             input_img = np.asarray(cropped_charachter).reshape((1, 30, 30, 3))
             label = label + str(classes[np.argmax(model.predict(input_img))])
             
-    # appendfont = cv.FONT_HERSHEY_SIMPLEX
     label_cut = label[:3]
-    #org = (50, 50)
-    #fontScale = 1
-    #color = (255, 0, 0)
-    #thickness = 2    
-    #cv.putText(img, label_cut , org, font, fontScale, color, thickness, cv.LINE_AA)    
-    #cv.imshow('Result', img)
-    #cv.waitKey(0)
-    #cv.destroyAllWindows()
+
 
     return label_cut

@@ -58,15 +58,6 @@ def object_detection(frame):
 
 	return (frame, detection_result)
 
-#image = cv2.imread(test_image_file)
-#image = cv2.resize(image, frame_size)
-#frame, result = object_detection(image)
-#print(type(frame))
-#print(type(result))
-#print(result)
-#cv2.imwrite('result.jpg', image_convert)
-#cv2.imshow("Result", frame)
-#cv2.waitKey(0)
-#cv2.destroyAllWindows()
+
 
 
