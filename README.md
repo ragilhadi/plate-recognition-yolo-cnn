@@ -108,4 +108,4 @@ python3 camera_ocr.py #for mac or linux
 
 ## Conclustion my own CNN model vs easyocr
 the result of these method to recognize the text inside the plate be depicted in these picture
-![Screenshot](documentation/conclustion.jpg)
+![Screenshot](documentation/conclustion.JPG)
