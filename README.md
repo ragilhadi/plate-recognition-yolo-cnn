@@ -53,7 +53,7 @@
    in these project i use some code from these [kaggle notebok](https://www.kaggle.com/foolishboi/license-plate-recognition-final) to create segmentation to my plate
 
    **The result of my Segmentation**
-   ![Screenshot](documentation/segmentation.jpg)
+   ![Screenshot](documentation/segmentation.JPG)
 
 5. **Wrap all the project code**
    with all that model ready and the segmentation to get each charachter in the image ready. i wrap all into one folder to easily organize and i use some code from these [github repo](https://github.com/biplob004/motorcycle_license_plate.git)
