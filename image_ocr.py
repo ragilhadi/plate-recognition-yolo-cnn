@@ -5,7 +5,7 @@ import pyttsx3
 import time
 start_time = time.time()
 
-test_image_file = 'images/picture (1).jpg'
+test_image_file = 'test.jpg'
 
 image = cv2.imread(test_image_file)
 image = cv2.resize(image, frame_size)
@@ -42,7 +42,7 @@ cv2.imshow("Result OCR", frame)
 print("--- %s seconds ---" % (time.time() - start_time))
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-cv2.imwrite('export/test/ocr/picture (1).jpg', frame)
+cv2.imwrite('export/result_ocr.jpg', frame)
 
 
 
